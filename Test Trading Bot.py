@@ -10,9 +10,9 @@ import joblib  # For loading the saved scaler
 scaler = joblib.load('scaler_updated.joblib')
 
 # Load the saved model
-model = load_model('Trading_bot_Bitcoin_BiGRU_updated.keras')  # Updated file format
+model = load_model('Trading_bot_Bitcoin_BiGRU_updated.keras') 
 
-# Binance API keys (Do not hardcode these in practice)
+# Binance API keys Use your api and security key
 api_key = 'api_key'
 api_secret = 'secret_key'
 client = Client(api_key, api_secret)
@@ -41,10 +41,8 @@ target_length = 10
 num_features = data.shape[1]
 
 # Normalize the last sequence_length data for prediction
-# Calculate the middle index
-middle_index = len(data) // 2
 
-input_sequence = data[middle_index:middle_index+60]
+input_sequence = data.tail(sequence_length)
 scaled_data = scaler.transform(input_sequence)
 
 # Prepare the input for prediction
@@ -109,7 +107,7 @@ fig.update_layout(title='Trading Chart - Predicted vs. Actual',
 # Save the figure to an HTML file
 fig.write_html('trading_chart.html')
 
-# Print a message indicating the file has been saved
+# Printing message indicating the file has been saved
 print("Trading chart saved to 'trading_chart.html'")
 
 # Show the figure

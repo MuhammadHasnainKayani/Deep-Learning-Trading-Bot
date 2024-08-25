@@ -1,6 +1,6 @@
 Description:
 
-A deep learning trading bot using cryptocurrency market data from Binance API.
+A deep learning trading bot using cryptocurrency market data from Binance API that can predict market on different time frames and also place order.
 
 Dataset and Model Files Available:
 

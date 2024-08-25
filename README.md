@@ -2,6 +2,16 @@ Description:
 
 A deep learning trading bot using cryptocurrency market data from Binance API.
 
+Dataset and Model Files Available:
+
+- Dataset of BTCUSDT for almost past 14 months
+
+- Training model file
+
+- Testing model file
+
+- Screenshots of model training process
+
 Features:
 
 - Collects data for any crypto pair and time frame
